@@ -1,0 +1,91 @@
+\documentclass[10.5pt,letterpaper]{article}
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bbm}
+\textwidth = 18 cm
+\textheight = 24.5 cm
+\oddsidemargin = -1.0 cm
+\evensidemargin = 0.0 cm
+\topmargin = -1.0 cm
+\headheight = 0.0 cm
+\headsep = 0.0 cm 
+\pagestyle{empty}
+
+\date{}
+
+\title{Useful Identities in Atomic Physics}
+\author{Nicol\'as Quesada M.\\{\small \sf Instituto de F\'isica, Universidad de Antioquia}}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\subsection*{Notation and Conventions}
+The quantum numbers of the energy eigenstates of the non-relativistic hydrogen atom are: $n$ (energy), $l$ (angular momentum) and $m_l$ ($z$ projection of angular momentum). Otherwise stated  $\langle \cdot \rangle$ means average over \emph{energy} eigenstates.
+
+\subsection*{Scales Constants and Special Values of Hydrogenoid Wave Functions}
+
+Energies for the Coulomb Potential ($V(\textbf{r})=-\frac{1}{4 \pi \epsilon_0}\frac{Z e^2}{r})$ are $E_n=-\frac{m}{2n^2}\left( \frac{Ze^2}{4 \pi \epsilon_0 \hbar} \right)^2=-\frac{e^2}{4 \pi \epsilon_0 a_0} \frac{Z^2}{2 n^2}=-\frac{1}{2} m c^2 \frac{(Z \alpha)^2}{n ^2}$\\
+
+Fine structure constant: $\alpha=\frac{e^2}{4 \pi \epsilon_0 \hbar c}$. Bohr radius: $a_0=4 \pi \epsilon_0 \hbar^2/(m e^2)$. \space \space \space
+$|\psi_{n l m}(0)|^2=\frac{Z^3}{\pi a_0^3 n^3} \delta_{l}^0 \delta_m^0$
+
+\subsection*{Expected Values, the Virial Theorem and the Gamma Function}
+
+Virial Theorem: If $H=T(\textbf{p})+V(\textbf{r})$ and $T(\textbf{p})=\textbf{p}^2/2m$ then $2\langle T \rangle=\langle \textbf{r} \cdot \nabla V \rangle$\\
+
+Some expectation values: $\langle \frac{1}{r} \rangle=\frac{Z}{a_0 n^2}$ , $\langle \frac{1}{r^2} \rangle=\frac{Z^2}{a_0^2 n^3 (l+1/2)}$\\
+
+Recursion Relation: $0=\frac{s}{4}\left[(2 l+1)^2-s^2 \right] a_0^2 \langle r^{s-2} \rangle-(2s+1)a_0 \langle r^{s-1} \rangle+\frac{s+1}{n^2} \langle r^s \rangle$\\
+
+Definition: $\Gamma(z) = \int_0^\infty  t^{z-1} e^{-t}\,dt $.\\
+
+Identities: $\Gamma(n+1)=n!$\space \space, \space \space $ \Gamma(1-z) \; \Gamma(z) = {\pi \over \sin{(\pi z)}} \,\! $ \space \space, \space \space  $\Gamma(z) \; \Gamma\left(z + \frac{1}{2}\right) = 2^{1-2z} \; \sqrt{\pi} \; \Gamma(2z). \,\! $
+
+
+\subsection*{Integrals of 3 Spherical Harmonics, Wigner 3j Symbols and Clebsch Gordan Coefficients}
+
+$\int_0^{2 \pi} d\phi \int_0^{\pi} \sin \theta d\theta \mathcal{Y}_{l_1}^{m_1}(\theta,\phi) \mathcal{Y}_{l_2}^{m_2}(\theta,\phi) \mathcal{Y}_{l_3}^{m_3}(\theta,\phi)=\sqrt{\frac{(2l_1+1)(2l_2+1)(2l_3+1)}{4 \pi}} \begin{pmatrix}
+  l_1 & l_2 & l_3\\
+  0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  l_1 & l_2 & l_3\\
+  m_1 & m_2 & m_3
+\end{pmatrix}
+$
+\\
+
+Wigner 3-j Clebsch Gordan relation:
+$
+\begin{pmatrix}
+  j_1 & j_2 & j_3\\
+  m_1 & m_2 & m_3
+\end{pmatrix}
+\equiv \frac{(-1)^{j_1-j_2-m_3}}{\sqrt{2j_3+1}} \langle j_1 m_1 j_2 m_2 | j_3 \, {-m_3} \rangle.$\\
+
+Selection rules for Wigner 3-j Symbol $\begin{pmatrix}  l_1 & l_2 & L\\   m_1 & m_2 & -M \end{pmatrix}$ (they are identical to C-G Selection Rules):
+
+\begin{tabular}{llll}
+$m_i \in  \{-l_i,-l_i+1,...,l_i-1,l_i\}$ & $m_1+m_2=M$ & $|l_1-l_2|\leqslant L \leqslant l_1+l_2$ & $l_1+l_2+L \in \mathbbm{N}$  \\ 
+\end{tabular}
+\\
+
+Spherical components of a cartesian vector $\vec e=(e_x,e_y,e_z)$: $e_{\pm 1}=\mp \frac{1}{\sqrt{2}} \left( e_x\pm i e_y \right)$ and $e_0=e_z$\\
+
+Ladder Operators: $ \hat L_{\pm}=\hat L_x\pm i \hat L_y$. \space \space \space $\hat L_{\pm} |l,m_l \rangle=\hbar \sqrt{l(l+1)-m_l(m_l\pm1)}|l,m_l\pm1 \rangle$
+
+
+\begin{thebibliography}{}
+\bibitem{} B.H. Bransden, C.J. Joachain \textit{Physics of Atoms and Molecules}, Prentice Hall.
+\bibitem{} G.B. Arfken, H.J. Weber \textit{Mathematical Methods for Physicists}, Harcourt Academic Press.
+\bibitem{} Weisstein, Eric W. "Wigner 3j-Symbol." From MathWorld--A Wolfram Web Resource. \verb|http://mathworld.wolfram.com/Wigner3j-Symbol.html|
+\end{thebibliography}
+
+
+\end{document}
+

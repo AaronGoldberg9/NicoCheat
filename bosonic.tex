@@ -1,0 +1,56 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\pagestyle{empty}
+\textwidth = 16.5 cm
+\textheight = 24.5 cm
+\oddsidemargin = 0.0 cm
+\evensidemargin = 0.0 cm
+\topmargin = 0.0 cm
+\headheight = 0.0 cm
+\headsep = 0.0 cm 
+\date{}
+
+\title{Useful Identities in Quantum Optics}
+\author{Nicol\'as Quesada M.\\{\small \sf Instituto de F\'isica, Universidad de Antioquia}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\subsection*{Notation}
+Latin letters with caret ($\hat a, \hat x, \hat y, \hat z$) denote linear operators.\\
+Greek letters ($\alpha, \lambda$) denote $\mathbb{C}$ numbers.\\
+The hermitian adjoint of $\hat a$ is denoted $\hat a^{\dagger}$.\\
+The commutator of two operators $\hat x$ and $\hat y$ is defined as:
+$ [\hat x,\hat y] := \hat x \hat y-\hat y \hat x$ \\
+
+\subsection*{Leibniz's law }
+$$ [\hat x, \hat y \hat z]=[\hat x, \hat y] \hat z+\hat y[\hat x,\hat z] $$
+$$ [\hat x \hat y, \hat z]=[\hat x, \hat z] \hat y+\hat x[\hat y,\hat z] $$
+
+\subsection*{Jacobi Identity}
+$$ [\hat x, [ \hat y, \hat z]]+[ \hat y,[ \hat z,\hat x]]+[\hat z, [\hat x, \hat y]]=0 $$
+\subsection*{Baker-Campbell-Hausdorff formula}
+If $[\hat x,[\hat x,\hat y]]=[\hat y,[\hat x,\hat y]]=0$ then:
+$$e^{\hat x+\hat y}=\exp{\left(-\frac{1}{2} [\hat x,\hat y] \right)} e^{\hat x} e^{\hat y}=\exp{\left(\frac{1}{2} [\hat x,\hat y] \right)} e^{\hat y} e^{\hat x} $$
+
+\subsection*{Hadamard lemma}
+$$ e^{ i \lambda \hat x} \hat y e^{- i \lambda \hat x}=\hat y + i \lambda [\hat x,\hat y]+\frac{(i \lambda)^2}{2!}[\hat x,[\hat x,\hat y]]+\ldots$$
+
+\subsection*{Identities for Bosonic Operators}
+The bosonic operators $\hat a$ and $\hat a^\dagger$ satisfy $[\hat a,\hat a^\dagger]=\hat 1$
+$$[\hat a,f(\hat a,\hat a^\dagger)]=\frac{\partial f}{\partial \hat a^\dagger}$$
+$$[\hat a^\dagger,f(\hat a,\hat a^\dagger)]=-\frac{\partial f}{\partial \hat a}$$
+$$e^{-\alpha \hat a^\dagger \hat a} f(\hat a,\hat a^\dagger) e^{\alpha \hat a^\dagger \hat a}=f(\hat a e^\alpha,\hat a^\dagger e^{-\alpha})$$
+
+\begin{thebibliography}{}
+\bibitem{} J.J. Sakurai, \textit{Modern Quantum Mechanics}, Addison Wesley Longman
+\bibitem{} M.O. Scully, M.S. Zubairy \textit{Quantum Optics}, Cambridge University Press.
+\end{thebibliography}
+
+
+\end{document}
+

@@ -32,26 +32,19 @@ The Fourier Transform (FT) of a function can be defined as
 \eq{
 F(\omega)=\int_{-\infty}^\infty f(t) e^{-\ii \omega t}.
 }
-One would like to approximate the value of the FT. To this end let us replace the function $f(t)$ by a bunch of unit impulse functions that ``mimic'' its behaviour 
-\eq{
-\tilde f(t) \approx \sum_{j=0}^{N-1} f(t_j) \delta(t-t_j) \Delta t,
-}
-where 
-\eq{\label{defs}
-\Delta t=\frac{t_f-t_i}{N} \text{ and } t_j=t_i+j \Delta t.
-}
-With these definitions one has
-\eq{
-\int_{t_j-\Delta t/2}^{t_j+\Delta t/2} dt \tilde f(t) = f(t_j) \Delta t \approx \int_{t_j-\Delta t/2}^{t_j+\Delta t/2} dt f(t).
-}
-Note however that $t_0=t_i$ but $t_N=t_i/N+(1-1/N) t_f \neq t_f$. Nevertheless, when $N \gg 1$ one has $t_N \to t_f$. Note also that if $N$ is even then $t_{N/2}=(t_f+t_i)/2$. 
-Having $\tilde f$ we can use it to approximate $f$ and to calculate its Fourier transform
+We can approximate this integral by a Riemann sum
 \eq{
 F(\omega) \approx \int_{-\infty}^\infty dt \left(\sum_{j=0}^{N-1} f(t_j) \delta(t-t_j) \Delta t \right) e^{-\ii \omega t}=\Delta t \sum_{j=0}^{N-1} f(t_j) e^{-\ii \omega t_j}.
 }
+where we use the following definitions
+\eq{\label{defs}
+\Delta t=\frac{t_f-t_i}{N} \text{ and } t_j=t_i+j \Delta t.
+}
+Note however that $t_0=t_i$ but $t_N=t_i/N+(1-1/N) t_f \neq t_f$. Nevertheless, when $N \gg 1$ one has $t_N \to t_f$. Note also that if $N$ is even then $t_{N/2}=(t_f+t_i)/2$. 
+
 Now let us pick $\omega$ to be a multiple of some (at the moment) undetermined frequency $\Delta \omega$, $\omega=k \Delta \omega$ and write $t_j=t_i+j \Delta t$
 \eq{
-F(k \Delta \omega)&\approx \Delta t\sum_{j=0}^{N-1} f(t_j) e^{-\ii k \Delta \omega (t_i+j \Delta t)}=\Delta t e^{-\ii k \Delta \omega t_i}\sum_{j=0}^{N-1} f(t_j) e^{-\ii k \Delta \omega j \Delta t}.
+F(k \Delta \omega)&\approx \Delta t\sum_{j=0}^{N-1} f(t_j) e^{-\ii k \Delta \omega (t_i+j \Delta t)}=\Delta t e^{-\ii k \Delta \omega t_i}\sum_{j=0}^{N-1} f(t_j) e^{-\ii k j \Delta \omega  \Delta t}.
 }
 It is convenient to pick $\Delta \omega = 2 \pi/(\Delta t N)=2 \pi /(t_f-t_i)$ to get
 \eq{\label{almost}

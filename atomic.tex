@@ -16,14 +16,14 @@
 %\subsection*{Notation and Conventions}
 \noindent The quantum numbers of the energy eigenstates of the non-relativistic hydrogenoid atom are: $n$ (energy), $l$ (angular momentum) and $m$ ($z$ projection of angular momentum). $\langle \cdot \rangle$ means average over \emph{energy} eigenstates.
 
-\subsection*{Scales Constants and Special Values of Hydrogenoid Wave Functions}
+\subsection*{Scales Constants and Special Values of Hydrogenoid Wave Functions $[1]$}
 
 Energies for the Coulomb Potential ($V(\textbf{r})=-\frac{1}{4 \pi \epsilon_0}\frac{Z e^2}{r})$ are $E_n=-\frac{\mu}{2n^2}\left( \frac{Ze^2}{4 \pi \epsilon_0 \hbar} \right)^2=-\frac{e^2}{4 \pi \epsilon_0 a_0} \frac{Z^2}{2 n^2}=-\frac{1}{2} \mu c^2 \frac{(Z \alpha)^2}{n ^2}$.\\
 
 \noindent Fine structure constant: $\alpha=\frac{e^2}{4 \pi \epsilon_0 \hbar c}$. Bohr radius: $a_0=4 \pi \epsilon_0 \hbar^2/(\mu e^2)$. \space \space \space
 $|\psi_{n l m}(0)|^2=\frac{Z^3}{\pi a_0^3 n^3} \delta_{l}^0 \delta_m^0$.
 
-\subsection*{Expected Values, the Virial Theorem and the Gamma Function}
+\subsection*{Expected Values, the Virial Theorem and the Gamma Function $[2,3]$}
 
 Virial Theorem (valid for \emph{any} potential): If $H=T(\textbf{p})+V(\textbf{r})$ and $T(\textbf{p})=\frac{\textbf{p}^2}{2\mu}$ then $2\langle T \rangle=\langle \textbf{r} \cdot \nabla V \rangle$ .\\
 
@@ -34,7 +34,7 @@ Virial Theorem (valid for \emph{any} potential): If $H=T(\textbf{p})+V(\textbf{r
 \noindent $\Gamma(z) = \int_0^\infty  t^{z-1} e^{-t}\,dt $ \space , \space $\Gamma(n+1)=n!$\space , \space $ \Gamma(1-z) \; \Gamma(z) = {\pi \over \sin{(\pi z)}} \,\! $ \space , \space  $\Gamma(z) \; \Gamma\left(z + \frac{1}{2}\right) = 2^{1-2z} \; \sqrt{\pi} \; \Gamma(2z). \,\! $
 
 
-\subsection*{Spherical Harmonics, Wigner 3$j$ Symbols and Clebsch -- Gordan Coefficients}
+\subsection*{Spherical Harmonics, Wigner 3$j$ Symbols and Clebsch -- Gordan Coefficients $[4]$}
 $\int_0^{2 \pi} d\phi \int_0^{\pi} \sin \theta d\theta \ \mathcal{Y}_{l_1}^{m_1}(\theta,\phi) \mathcal{Y}_{l_2}^{m_2}(\theta,\phi) \mathcal{Y}_{l_3}^{m_3}(\theta,\phi)=\sqrt{\frac{(2l_1+1)(2l_2+1)(2l_3+1)}{4 \pi}} \begin{pmatrix}
   l_1 & l_2 & l_3\\
   0 & 0 & 0
@@ -58,7 +58,7 @@ $
 
 \noindent 
 \begin{tabular}{llll}
-$-l_i \leq m_i \leq l_i, $ & $m_1+m_2=M$, & $|l_1-l_2|\leqslant L \leqslant l_1+l_2$ & $l_1+l_2+L \in \mathbbm{Z}$  \.\ 
+$-l_i \leq m_i \leq l_i, $ & $m_1+m_2=M$, & $|l_1-l_2|\leqslant L \leqslant l_1+l_2$ & $l_1+l_2+L \in \mathbbm{Z}$.
 \end{tabular}
 \\
 
@@ -67,14 +67,10 @@ $-l_i \leq m_i \leq l_i, $ & $m_1+m_2=M$, & $|l_1-l_2|\leqslant L \leqslant l_1+
 \noindent Ladder Operators: $ \hat L_{\pm}\equiv \hat L_x\pm i \hat L_y$. \space \space \space $\hat L_{\pm} |l,m \rangle=\hbar \sqrt{l(l+1)-m(m\pm1)}|l,m_l\pm1 \rangle$.
 
 \subsection*{References}
-
-%\begin{itemize}
-
-B.H. Bransden, C.J. Joachain \textit{Physics of Atoms and Molecules}\\
-G.B. Arfken, H.J. Weber \textit{Mathematical Methods for Physicists}\\
-E. W. Weisstein, ``Wigner 3$j$-Symbol.'' \verb|http://mathworld.wolfram.com/Wigner3j-Symbol.html|\\
-S. Jeon, \textit{Lecture Notes for Quantum Physics} II. \verb|http://www.physics.mcgill.ca/~jeon/Phys457/|
-%\end{itemize}
+$[1]$ B.H. Bransden, C.J. Joachain \textit{Physics of Atoms and Molecules}\\
+$[2]$ S. Jeon, \textit{Lecture Notes for Quantum Physics} II. \verb|http://www.physics.mcgill.ca/~jeon/Phys457/|\\
+$[3]$ G.B. Arfken, H.J. Weber \textit{Mathematical Methods for Physicists}\\
+$[4]$ E. W. Weisstein, ``Wigner 3$j$-Symbol.'' \verb|http://mathworld.wolfram.com/Wigner3j-Symbol.html|
 
 \end{document}
 

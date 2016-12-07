@@ -6,6 +6,9 @@
 %.dvi:%.tex
 	latex $^
 	latex $^
+all: atomic.pdf  bosonic.pdf  fourier.pdf
+
+
 public:
 	cp *.pdf ~/Dropbox/Public
 

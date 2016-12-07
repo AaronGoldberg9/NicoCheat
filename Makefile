@@ -13,5 +13,5 @@ public:
 	cp *.pdf ~/Dropbox/Public
 
 clean:
-	rm *.aux *.log
+	rm *.aux *.log *.dvi *.ps
 

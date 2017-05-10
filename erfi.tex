@@ -8,7 +8,7 @@
 
 \newcommand{\eq}[1]{\begin{align}#1\end{align}}
 \newcommand{\erfi}{\text{erfi}}
-
+\newcommand{\iu}{\text{i}}
 
 \title{An simple identity involving the imaginary error function erfi(x)}
 \author{Nicol\'as Quesada and Aaron Goldberg}
@@ -17,10 +17,57 @@
 \maketitle
 The imaginary error function erfi($x$) is costumarily defined as
 \eq{
-\erfi(x) = \frac{2}{\sqrt{\pi}} \int_0^x dt \ e^{t^2}
+\erfi(x) = \frac{2}{\sqrt{\pi}} \int_0^x dt \ e^{t^2}.
 }
-It can be also defined as
+It is related to the error function by erfi($x$)=-\iu erf($\iu x$), and can be also defined as
 \eq{
-\fint_{\infty}^{\infty} dy\ \frac{e^{a y^2 +2 b y}}{\pi y} = 2\int_0^\infty e^{a y^2}\frac{\sinh(2 b y)}{y}=\erfi(b/\sqrt{-a})
+\fint_{-\infty}^{\infty} dy\ \frac{e^{a y^2 +2 b y}}{\pi y} = 2\int_0^\infty dy e^{a y^2}\frac{\sinh(2 b y)}{\pi y}=\erfi(b/\sqrt{-a}).
+\label{eq:erfi-principal-integral}
 }
+In this note we investigate an interesting property of the imaginary error function.
+
+We can define two functions
+\eq{
+	\phi_0\equiv\frac{\exp\left(-x^2\right)}{\sqrt[4]{\pi/2}}
+}
+and
+\eq{
+	\phi_1=\sqrt{3}\phi_0\left(x\right)\erfi\left(\sqrt{\frac{2}{3}}x\right),
+}
+whose $\mathcal{L}^2$-orthogonality is seen from their respective parities. $\phi_1$ is related to the Dawson function $D\left(x\right)=\sqrt{\pi}/2 \exp\left(-x^2\right)\erfi\left(x\right)$.
+$\phi_0$ is seen to be normalized from the identity $\int_{-\infty}^{\infty}\exp\left(-ax^2\right)dx=\sqrt{\pi/a}$, and we here show that $\phi_1$ is also normalized.
+
+Consider the integral
+\eq{
+	I&=\int_{-\infty}^\infty dx \phi_1^2\left(x\right) \\
+	&=3\sqrt{\frac{2}{\pi}}\int_{-\infty}^\infty dx\exp\left(-2x^2\right)\erfi^2\left(\sqrt{\frac{2}{3}}x\right).
+}
+We use Eq. (\ref{eq:erfi-principal-integral}) to write
+\eq{
+	I&=\frac{3}{\pi^2}\sqrt{\frac{2}{\pi}}\int_{-\infty}^\infty dx\exp\left(-2x^2\right)\fint_{-\infty}^\infty \frac{du}{u} \exp\left(-\frac{3}{2}u^2+2ux\right)\fint_{-\infty}^\infty \frac{dv}{v} \exp\left(-\frac{3}{2}v^2+2vx\right)\\
+	&=\frac{3}{\pi^2}\sqrt{\frac{2}{\pi}}\fint_{-\infty}^\infty \frac{du}{u}\fint_{-\infty}^\infty \frac{dv}{v}
+	\exp\left(-\frac{3}{2}u^2-\frac{3}{2}v^2\right) \int_{-\infty}^\infty dx \exp\left(-2x^2+2ux+2vx\right)\\
+%	&=\frac{3}{\pi^2}\fint_{-\infty}^\infty \frac{du}{u}\fint_{-\infty}^\infty \frac{dv}{v}
+%	\exp\left(-\frac{3}{2}u^2-\frac{3}{2}v^2+(u+v)^2/2\right) \\
+	&=\frac{3}{\pi^2}\fint_{-\infty}^\infty \frac{du}{u}\exp\left(-u^2\right)\fint_{-\infty}^\infty \frac{dv}{v}
+	\exp\left(-v^2+uv\right),
+}
+where we have liberally switched the order of the integrals. We now again use Eq. (\ref{eq:erfi-principal-integral}) to find
+\eq{
+	I&=\frac{3}{\pi^2}\fint_{-\infty}^\infty \frac{du}{u}\exp\left(-u^2\right)\left(\pi\erfi\left(\frac{u}{2}\right)\right)\\
+	&=\frac{6}{\pi}\int_{0}^\infty \frac{du}{u}\exp\left(-u^2\right)\erfi\left(\frac{u}{2}\right).
+}
+Then we use the identity
+\eq{
+	\int dz\frac{\exp\left(bz^2\right)\erfi\left(az\right)}{z}=-\frac{az}{\sqrt{-\pi bz^2}}\sum_{k=0}^{\infty}\frac{\left(-1\right)^kb^{-k}a^{2k}\Gamma\left(k+\frac{1}{2},-bz^2\right)}{\left(2k+1\right)k!}
+}
+(wolfram), where $\Gamma\left(x,s)=\int_{x}^{\infty}dt \,t^{s-1}\text{e}^{-t}$ is the upper incomplete gamma function, to show that
+\eq{
+	I&=\left.-\frac{6}{\pi}\frac{z/2}{\sqrt{\pi z^2}}\sum_{k=0}^{\infty}\frac{\left(1/2\right)^{2k}\Gamma\left(k+\frac{1}{2},z^2\right)}{\left(2k+1\right)k!}\right|_{z=0}^{z=\infty}\\
+	&=\frac{3}{\pi^{3/2}}\sum_{k=0}^{\infty}\frac{\left(1/2\right)^{2k}\Gamma\left(k+\frac{1}{2}\right)}{\left(2k+1\right)k!}\\
+	&=\frac{3}{\pi^{3/2}}\sum_{k=0}^{\infty}\frac{\left(1/2\right)^{2k}\frac{\left(2k\right)!\sqrt{\pi}}{4^kk!}}{\left(2k+1\right)k!}\\
+	&=\frac{3}{\pi}\sum_{k=0}^{\infty}\binom{2k}{k}\frac{1}{2^{4k}\left(2k+1\right)}\\
+	&=1,
+}
+as required.
 \end{document}

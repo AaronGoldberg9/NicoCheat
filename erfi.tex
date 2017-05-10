@@ -1,0 +1,26 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{graphicx}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{fullpage}
+
+\newcommand{\eq}[1]{\begin{align}#1\end{align}}
+\newcommand{\erfi}{\text{erfi}}
+
+
+\title{An simple identity involving the imaginary error function erfi(x)}
+\author{Nicol\'as Quesada and Aaron Goldberg}
+
+\begin{document}
+\maketitle
+The imaginary error function erfi($x$) is costumarily defined as
+\eq{
+\erfi(x) = \frac{2}{\sqrt{\pi}} \int_0^x dt \ e^{t^2}
+}
+It can be also defined as
+\eq{
+\fint_{\infty}^{\infty} dy\ \frac{e^{a y^2 +2 b y}}{\pi y} = 2\int_0^\infty e^{a y^2}\frac{\sinh(2 b y)}{y}=\erfi(b/\sqrt{-a})
+}
+\end{document}
